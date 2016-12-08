@@ -1,6 +1,8 @@
 FROM ubuntu:16.04
 
-# Pick up some TF dependencies
+MAINTAINER Michal Olejniczak <kaomanster@google.com>
+
+# Get some dependencies first!
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         curl \
@@ -25,12 +27,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Get OpenCv 3.1.0
 RUN wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip \
   && unzip opencv.zip
 
+# Get contrib repo for SIFT and SURF
 RUN wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip \
   && unzip opencv_contrib.zip
 
+# Install pip and some nice packages
 RUN apt-get update && apt-get install -y python-pip
 RUN pip install ipykernel
 RUN pip3 install --upgrade pip
@@ -48,6 +53,7 @@ RUN pip3 --no-cache-dir install \
         && \
     python -m ipykernel.kernelspec
 
+# Build, make and install OpenCv
 RUN cd opencv-3.1.0/  \
     && mkdir build \
     && cd build \
@@ -58,9 +64,11 @@ RUN cd opencv-3.1.0/  \
     -D PYTHON_EXECUTABLE=/usr/bin/python .. \
     && make -j4 \
     && make install \
-    && ldconfig \
+    && ldconfig
 
+# Remove unnecessary folders and archives
 RUN rm -rf opencv*
 
+# Install Tensorflow CPU
 RUN pip3 --no-cache-dir install \
     http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.0rc0-cp35-cp35m-linux_x86_64.whl
