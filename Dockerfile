@@ -50,6 +50,7 @@ RUN pip3 --no-cache-dir install \
         scikit-image \
         Pillow \
         imutils \
+        jupyter \
         && \
     python -m ipykernel.kernelspec
 
@@ -72,3 +73,21 @@ RUN rm -rf opencv*
 # Install Tensorflow CPU
 RUN pip3 --no-cache-dir install \
     http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.0rc0-cp35-cp35m-linux_x86_64.whl
+
+# Set up our notebook config.
+COPY jupyter_notebook_config.py /root/.jupyter/
+
+# Copy sample notebooks.
+COPY notebooks /notebooks
+
+# Jupyter has issues with being run directly:
+#   https://github.com/ipython/ipython/issues/7062
+# We just add a little wrapper script.
+COPY run_jupyter.sh /
+
+# IPython
+EXPOSE 8888
+
+WORKDIR "/notebooks"
+
+CMD ["/run_jupyter.sh"]
