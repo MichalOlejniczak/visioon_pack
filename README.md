@@ -1,4 +1,6 @@
-# visioon_pack
+# visioon_pack 
+[![Build Status](https://travis-ci.org/MichalOlejniczak/visioon_pack.svg?branch=master)](https://travis-ci.org/MichalOlejniczak/visioon_pack)
+
 What do you get?
 
 Ubuntu 16.04 container with:
