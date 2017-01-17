@@ -54,7 +54,7 @@ RUN pip3 --no-cache-dir install \
         && \
     python -m ipykernel.kernelspec
 
-# Build, make and install OpenCv
+# Build, make and install OpenCv and then remove unnecessary folders and archives
 RUN cd opencv-3.1.0/  \
     && mkdir build \
     && cd build \
@@ -65,10 +65,8 @@ RUN cd opencv-3.1.0/  \
     -D PYTHON_EXECUTABLE=/usr/bin/python .. \
     && make -j4 \
     && make install \
-    && ldconfig
-
-# Remove unnecessary folders and archives
-RUN rm -rf opencv*
+    && ldconfig \
+    && rm -rf opencv*
 
 # Install Tensorflow CPU
 RUN pip3 --no-cache-dir install \
