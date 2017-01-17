@@ -8,3 +8,4 @@ Ubuntu 16.04 container with:
 - Scikit-image
 - Tensorflow 0.12 CPU
 - Keras 
+- Jupyter Notebook
