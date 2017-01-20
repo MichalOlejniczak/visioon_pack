@@ -50,6 +50,7 @@ RUN pip3 --no-cache-dir install \
         scikit-image \
         Pillow \
         imutils \
+        h5py \
         jupyter \
         && \
     python -m ipykernel.kernelspec
