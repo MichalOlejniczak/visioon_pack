@@ -39,7 +39,6 @@ RUN wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/
 # Install pip and some nice packages
 # RUN apt-get update && apt-get install -y python-pip
 RUN pip3 install ipykernel
-RUN pip3 install --upgrade pip
 RUN pip3 install setuptools
 RUN pip3 --no-cache-dir install \
         matplotlib \
@@ -54,7 +53,7 @@ RUN pip3 --no-cache-dir install \
         h5py \
         jupyter \
         && \
-    python -m ipykernel.kernelspec
+        python3 -m ipykernel.kernelspec
 
 # Build, make and install OpenCv and then remove unnecessary folders and archives
 RUN cd opencv-3.1.0/  \
