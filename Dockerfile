@@ -36,8 +36,8 @@ RUN wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/
   && unzip opencv_contrib.zip
 
 # Install pip and some nice packages
-RUN apt-get update && apt-get install -y python-pip
-RUN pip install ipykernel
+# RUN apt-get update && apt-get install -y python-pip
+RUN pip3 install ipykernel
 RUN pip3 install --upgrade pip
 RUN pip3 install setuptools
 RUN pip3 --no-cache-dir install \
