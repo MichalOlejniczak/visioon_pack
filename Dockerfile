@@ -70,9 +70,7 @@ RUN cd opencv-3.1.0/  \
     && rm -rf opencv*
 
 # Install Tensorflow CPU
-RUN pip3 --no-cache-dir install \
-    http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.1.0-cp35-cp35m-manylinux1_x86_64.whl
-
+RUN pip3 --no-cache-dir install http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.1.0rc2-cp35-cp35m-linux_x86_64.whl
 # Set up our notebook config.
 COPY jupyter_notebook_config.py /root/.jupyter/
 
