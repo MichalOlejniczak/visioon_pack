@@ -29,11 +29,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 # Get OpenCv 3.1.0
-RUN wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip \
+#RUN wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip \
   && unzip opencv.zip
 
 # Get contrib repo for SIFT and SURF
-RUN wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip \
+#RUN wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip \
   && unzip opencv_contrib.zip
 
 # Install pip and some nice packages
