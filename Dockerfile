@@ -56,7 +56,7 @@ RUN pip3 --no-cache-dir install \
         python3 -m ipykernel.kernelspec
 
 # Build, make and install OpenCv and then remove unnecessary folders and archives
-RUN cd opencv-3.1.0/  \
+#RUN cd opencv-3.1.0/  \
     && mkdir build \
     && cd build \
     && cmake -D CMAKE_BUILD_TYPE=RELEASE \
