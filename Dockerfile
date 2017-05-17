@@ -29,11 +29,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 # Get OpenCv 3.1.0
-#RUN wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip \
+RUN wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip \
   && unzip opencv.zip
 
 # Get contrib repo for SIFT and SURF
-#RUN wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip \
+RUN wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip \
   && unzip opencv_contrib.zip
 
 # Install pip and some nice packages
@@ -56,7 +56,7 @@ RUN pip3 --no-cache-dir install \
         python3 -m ipykernel.kernelspec
 
 # Build, make and install OpenCv and then remove unnecessary folders and archives
-#RUN cd opencv-3.1.0/  \
+RUN cd opencv-3.1.0/  \
     && mkdir build \
     && cd build \
     && cmake -D CMAKE_BUILD_TYPE=RELEASE \
