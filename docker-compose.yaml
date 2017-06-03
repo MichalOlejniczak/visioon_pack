@@ -1,0 +1,8 @@
+version: '2'
+services:
+  jupyter:
+    image: michalolejniczak/visioon_pack:master
+    ports:
+    - 8888:8888
+    volumes:
+    - /home/michal/phd/samples:/samples
