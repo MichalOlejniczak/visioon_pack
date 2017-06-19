@@ -75,7 +75,6 @@ RUN pip3 --no-cache-dir install http://storage.googleapis.com/tensorflow/linux/c
 COPY jupyter_notebook_config.py /root/.jupyter/
 
 # Copy sample notebooks.
-COPY notebooks /notebooks
 
 # Jupyter has issues with being run directly:
 #   https://github.com/ipython/ipython/issues/7062
@@ -84,7 +83,5 @@ COPY run_jupyter.sh /
 
 # IPython
 EXPOSE 8888
-
-WORKDIR "/notebooks"
 
 CMD ["/run_jupyter.sh"]
