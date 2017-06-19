@@ -6,3 +6,4 @@ services:
     - 8888:8888
     volumes:
     - /home/michal/phd/samples:/samples
+    - /home/michal/phd/notebooks:/notebooks
