@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libxvidcore-dev libx264-dev \
         libatlas-base-dev gfortran \
         unzip wget \
-        python3.5-dev python3-pip python3-setuptools \
+        python3.5-dev python3-pip python3-setuptools python3-tk \
         && apt-get clean && rm -rf /var/lib/apt/lists/* \
         && wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip && unzip opencv.zip && rm opencv.zip \
         && wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip && unzip opencv_contrib.zip && rm opencv_contrib.zip \
