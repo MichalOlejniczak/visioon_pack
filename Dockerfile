@@ -17,15 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         && apt-get clean && rm -rf /var/lib/apt/lists/* \
         && wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip && unzip opencv.zip && rm opencv.zip \
         && wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip && unzip opencv_contrib.zip && rm opencv_contrib.zip \
-        && pip3 --no-cache-dir install Pillow matplotlib numpy scipy keras sklearn scikit-image imutils h5py ipykernel jupyter \
+        && pip3 --no-cache-dir install Pillow matplotlib numpy scipy keras sklearn scikit-image imutils opencv-python h5py ipykernel jupyter \
         https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.2.1-cp35-cp35m-linux_x86_64.whl \
-        && python3 -m ipykernel.kernelspec \
-        && cd opencv-3.1.0/ && mkdir build && cd build && cmake -D CMAKE_BUILD_TYPE=RELEASE \
-        -D CMAKE_INSTALL_PREFIX=/usr/local \
-        -D INSTALL_C_EXAMPLES=OFF \
-        -D OPENCV_EXTRA_MODULES_PATH=/opencv_contrib-3.1.0/modules \
-        -D PYTHON_EXECUTABLE=/usr/bin/python3.5 .. \
-        && make -j4 && make install && ldconfig && cd / && rm -rf opencv*
+        && python3 -m ipykernel.kernelspec
 
 # Set up our notebook config.
 COPY jupyter_notebook_config.py /root/.jupyter/

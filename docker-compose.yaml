@@ -1,8 +1,9 @@
 version: '2'
 services:
   ml:
-    image: michalolejniczak/visioon_pack:master
+    image: michalolejniczak/visioon_pack:with_jupyter
     volumes:
     - /home/michal/phd/samples:/samples
     - /home/michal/phd/scripts:/scripts
-    tty: true
+    ports:
+    - 8888:8888
