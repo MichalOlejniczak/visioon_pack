@@ -1,7 +1,7 @@
 version: '2'
 services:
   ml:
-    image: michalolejniczak/visioon_pack:with_jupyter
+    image: michalolejniczak/visioon_pack:with_jupyter_cv_from_pip
     volumes:
     - /home/michal/phd/samples:/samples
     - /home/michal/phd/scripts:/scripts
