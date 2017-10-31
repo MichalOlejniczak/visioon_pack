@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3.5-dev python3-pip python3-setuptools python3-tk \
         && apt-get clean && rm -rf /var/lib/apt/lists/* \
         && pip3 --no-cache-dir install Pillow matplotlib numpy scipy keras sklearn scikit-image imutils opencv-python opencv-contrib-python h5py ipykernel jupyter \
-        https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.2.1-cp35-cp35m-linux_x86_64.whl \
+        https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl \
         && python3 -m ipykernel.kernelspec
 
 # Set up our notebook config.
