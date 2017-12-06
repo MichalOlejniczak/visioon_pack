@@ -8,6 +8,7 @@ Ubuntu 16.04 container with:
 - OpenCV 3.1.0 + contrib
 - Scikit-learn
 - Scikit-image
-- Tensorflow 1.1.0 CPU
+- Tensorflow 1.4.0 CPU
 - Keras 
 - Jupyter Notebook
+- Protobuf
