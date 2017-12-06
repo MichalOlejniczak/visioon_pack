@@ -9,6 +9,6 @@ Ubuntu 16.04 container with:
 - Scikit-learn
 - Scikit-image
 - Tensorflow 1.4.0 CPU
-- Keras 
+- Keras 2.1.2
 - Jupyter Notebook
 - Protobuf
