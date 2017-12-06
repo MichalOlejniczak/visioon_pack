@@ -1,10 +1,10 @@
 version: '2'
 services:
   ml:
-    image: michalolejniczak/visioon_pack:with_jupyter_cv_from_pip
+    image: michalolejniczak/visioon_pack:master
     volumes:
     - /home/michal/phd/samples:/samples
     - /home/michal/phd/scripts:/scripts
-    - /home/michal/phd/from_jupyter:/notebooks
+    - /home/michal/phd/notebooks:/notebooks
     ports:
     - 8888:8888
