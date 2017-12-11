@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libpng12-dev \
         libsm6 libxrender1 libfontconfig1 \
         libzmq3-dev \
+        libav-tools \
         libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev \
         libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
         libxvidcore-dev libx264-dev \
@@ -17,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3.5-dev python3-pip python3-setuptools python3-tk \
         protobuf-compiler python-pil python-lxml \
         && apt-get clean && rm -rf /var/lib/apt/lists/* \
-        && pip3 --no-cache-dir install Pillow matplotlib numpy scipy keras==2.1.2 sklearn scikit-image imutils opencv-python opencv-contrib-python h5py ipykernel jupyter \
+        && pip3 --no-cache-dir install Pillow matplotlib numpy scipy keras==2.1.2 sklearn scikit-image sk-video imutils opencv-python opencv-contrib-python h5py ipykernel jupyter \
         https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.4.0-cp35-cp35m-linux_x86_64.whl \
         && python3 -m ipykernel.kernelspec
 
